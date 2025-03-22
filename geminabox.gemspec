@@ -1,4 +1,4 @@
-require File.expand_path('../lib/geminabox/version', __FILE__)
+require './lib/geminabox/version'
 
 Gem::Specification.new do |s|
   s.name              = 'geminabox'
@@ -13,8 +13,8 @@ Gem::Specification.new do |s|
   s.metadata["source_code_uri"] = "https://github.com/geminabox/geminabox"
   s.metadata["changelog_uri"]   = "https://github.com/geminabox/geminabox/releases"
 
-  s.required_ruby_version     = ">= 2.3.0"
-  s.required_rubygems_version = ">= 2.5.0"
+  s.required_ruby_version     = ">= 3.0"
+  s.required_rubygems_version = ">= 3.2"
 
   s.extra_rdoc_files  = %w[README.md]
   s.rdoc_options      = %w[--main README.md]
@@ -23,7 +23,8 @@ Gem::Specification.new do |s|
   s.files             = %w[MIT-LICENSE README.md] + Dir['{lib,public,views}/**/*']
   s.require_paths     = ['lib']
 
-  s.add_dependency('sinatra', "~> 2.0")
+  s.add_dependency('rackup', '~> 2.2')
+  s.add_dependency('sinatra', '~> 4.0')
   s.add_dependency('builder')
   s.add_dependency('httpclient', [">= 2.2.7"])
   s.add_dependency('nesty')

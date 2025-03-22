@@ -1,6 +1,7 @@
 require_relative '../../test_helper'
 require 'minitest/unit'
 require 'rack/test'
+require 'ostruct'
 
 class LargeGemListSpec < Geminabox::TestCase
   include Capybara::DSL

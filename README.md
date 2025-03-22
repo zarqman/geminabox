@@ -15,10 +15,8 @@ For basic auth, try [Rack::Auth](http://www.rubydoc.info/github/rack/rack/Rack/A
 
 ## System Requirements
 
-- Ruby 2.3 through 3.1 (Ruby 2.7, 3.0, or 3.1 is highly recommended)
-- RubyGems 2.5 through 3.3 (2.5.2 or higher is highly recommended)
-
-Use RubyGems the latest version (at least 2.5.2) for as an end-user full features like [`gem yank --host`](https://github.com/rubygems/rubygems/pull/1361).
+- Ruby 3.3+
+- RubyGems 3.5+
 
 ## Server Setup
 
@@ -38,6 +36,7 @@ Create a config.ru as follows:
     # 2) Rack::Session::Pool causes memory leak (it does not expire stored `@pool` hash)
     use Rack::Session::Pool, expire_after: 1000 # sec
     use Rack::Protection
+    use Rack::Protection::HostAuthorization, permitted_hosts: ["gems.example.com"]
 
     run Geminabox::Server
 

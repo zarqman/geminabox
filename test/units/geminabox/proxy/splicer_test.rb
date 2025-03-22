@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../../../test_helper'
 module Geminabox
   module Proxy
@@ -84,7 +86,7 @@ module Geminabox
       end
 
       def file_name
-        @file_name ||= 'file_to_be_spliced'
+        @file_name ||= +'file_to_be_spliced'
       end
 
       def gz_file_name
